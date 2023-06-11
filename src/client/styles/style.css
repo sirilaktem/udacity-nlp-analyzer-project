@@ -1,0 +1,36 @@
+@import url(global.css);
+
+/* Layout */
+.brand img {
+    margin: 2rem auto;
+}
+
+.app-title {
+    font: var(--font-semibold) var(--display-sm) var(--font-family);
+    color: var(--gray-900);
+    text-align: center;
+}
+
+select,
+input,
+.btn {
+    width: 100%;
+}
+
+#result-holder {
+    margin-top: 2rem;
+    padding: 1rem;
+    font: var(--font-semibold) var(--text-lg) var(--font-family);
+    background: var(--gray-50);
+}
+
+#result {
+    font: var(--font-semibold) var(--text-xl) var(--font-family);
+}
+
+footer {
+    background: var(--primary-600);
+    margin-top: 3rem;
+    color: white;
+    text-align: center;
+}
