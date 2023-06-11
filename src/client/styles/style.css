@@ -17,20 +17,34 @@ input,
     width: 100%;
 }
 
-#result-holder {
+.result-holder {
     margin-top: 2rem;
     padding: 1rem;
     font: var(--font-semibold) var(--text-lg) var(--font-family);
-    background: var(--gray-50);
+    background: var(--primary-100);
+}
+
+.result-title {
+    font: var(--font-semibold) var(--display-xs) var(--font-family);
+    color: var(--primary-600);
+    margin-bottom: 1rem;
 }
 
 #result {
     font: var(--font-semibold) var(--text-xl) var(--font-family);
 }
 
+.result-head {
+    display: inline-block;
+    width: 10rem;
+}
+
 footer {
-    background: var(--primary-600);
+    font: var(--font-semibold) var(--text-sm) var(--font-family);
+    /*color: var(--primary-600);*/
+    background: var(--gray-100);
     margin-top: 3rem;
-    color: white;
+    /*color: white;*/
     text-align: center;
+    padding: 0.5rem;
 }
