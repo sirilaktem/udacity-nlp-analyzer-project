@@ -53,13 +53,19 @@ This project is the final project of Front End Developer Nanodegree program by B
 
     `API_KEY = XXXXXXXXXXXXXXXXXXXXXXXX`
 
-6.  When everything is set, start the server by running this commend:
+6.  When everything is set, start the server by running this command:
 
     ```bash
       npm run start
     ```
 
-Then please access the application through [http://localhost:8081](http://localhost:8081)
+7.  Then please access the application through [http://localhost:8081](http://localhost:8081)
+
+8.  To run the test script, use the following command:
+
+    ```bash
+      npm run test
+    ```
 
 # Usage
 
