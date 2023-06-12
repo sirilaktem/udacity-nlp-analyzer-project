@@ -1,11 +1,11 @@
 //Import JS
-import { checkEmptyInput, checkValidUrl } from './js/inputChecker.js';
+import { checkEmptyInput, checkValidUrl } from './js/inputChecker';
 import {
     handleSubmit,
     postData,
     formatResult,
     translatePolarity,
-} from './js/formHandler.js';
+} from './js/formHandler';
 
 //Import styles
 import './styles/global.scss';
