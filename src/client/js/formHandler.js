@@ -2,13 +2,17 @@ const handleSubmit = (event) => {
     event.preventDefault();
 
     const resultHolder = document.getElementById('results');
+    const txtField = document.getElementById('name');
+    resultHolder.innerHTML = '';
+
     // check what text was put into the form field
-    let formText = document.getElementById('name').value.trim();
+    let formText = txtField.value.trim();
     let textType = checkValidUrl(formText) ? 'URL' : 'TEXT';
 
     if (checkEmptyInput(formText)) {
         postData('/nlp', { term: formText, type: textType }).then((result) => {
             resultHolder.innerHTML = formatResult(result, formText, textType);
+            txtField.value = '';
         });
     }
 };

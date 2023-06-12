@@ -11,9 +11,7 @@
     text-align: center;
 }
 
-select,
-input,
-.btn {
+input {
     width: 100%;
 }
 
