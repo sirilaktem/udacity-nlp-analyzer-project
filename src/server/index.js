@@ -2,10 +2,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const app = express();
-const mockAPIResponse = require('./mockAPI.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = process.env.PORT;
+const port = 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -20,10 +19,6 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
     console.log(`Your API key is ${process.env.API_KEY}`);
-});
-
-app.get('/test', (req, res) => {
-    res.send(mockAPIResponse);
 });
 
 const getAnalyzedData = async (params) => {
