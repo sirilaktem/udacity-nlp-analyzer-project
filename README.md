@@ -10,19 +10,19 @@ This project is the final project of Front End Developer Nanodegree program by B
 
 ## Sample Article Analysis Using URL
 
-![Sample1](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/website/images/nlp_screenshot01_url.jpg)
+![Sample1](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/src/client/images/nlp_screenshot01_url.jpg)
 
 ## Sample Analysis Using Text Input
 
-![Sample2](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/website/images/nlp_screenshot02_txt.jpg)
+![Sample2](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/src/client/images/nlp_screenshot02_txt.jpg)
 
 ## Sample Analysis Using Text in Other Language
 
-![Sample3](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/website/images/nlp_screenshot04_autolang.jpg)
+![Sample3](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/src/client/images/nlp_screenshot04_autolang.jpg)
 
 ## Sample Error Result
 
-![Sample4](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/website/images/nlp_screenshot03_error.jpg)
+![Sample4](https://raw.githubusercontent.com/sirilaktem/udacity-nlp-analyzer-project/master/src/client/images/nlp_screenshot03_error.jpg)
 
 # Table of Contents
 
