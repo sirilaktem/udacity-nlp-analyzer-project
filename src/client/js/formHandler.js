@@ -99,3 +99,5 @@ const translatePolarity = (score) => {
     }
     return polarity;
 };
+
+export { handleSubmit, postData, formatResult, translatePolarity };

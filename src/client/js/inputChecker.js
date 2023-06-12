@@ -17,3 +17,5 @@ const checkValidUrl = (inputText) => {
     ); // validate fragment locator
     return !!urlPattern.test(inputText);
 };
+
+export { checkEmptyInput, checkValidUrl };

@@ -9,15 +9,22 @@ const port = 8080;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('src/client'));
+//app.use(express.static('src/client'));
+app.use(express.static('dist'));
 
+/*
 app.get('/', (req, res) => {
     res.sendFile('/client/views/index.html', { root: __dirname + '/..' });
+});
+*/
+
+app.get('/', (req, res) => {
+    res.sendFile('dist/index.html');
 });
 
 // designates what port the app will listen to for incoming requests
 app.listen(port, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+    console.log(`Server is running on port 8080`);
     console.log(`Your API key is ${process.env.API_KEY}`);
 });
 
