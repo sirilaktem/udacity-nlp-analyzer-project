@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 8080;
+const port = 8081;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -24,8 +24,8 @@ app.get('/', (req, res) => {
 
 // designates what port the app will listen to for incoming requests
 app.listen(port, () => {
-    console.log(`Server is running on port 8080`);
-    console.log(`Your API key is ${process.env.API_KEY}`);
+    console.log(`Server is running on port 8081`);
+    //console.log(`Your API key is ${process.env.API_KEY}`);
 });
 
 const getAnalyzedData = async (params) => {
@@ -51,9 +51,9 @@ const getAnalyzedData = async (params) => {
 
 app.post('/nlp', (req, res) => {
     const params = req.body;
-    console.log(params);
+    //console.log(params);
     getAnalyzedData(params).then((data) => {
-        console.log(data);
+        //console.log(data);
         res.send(data);
     });
 });

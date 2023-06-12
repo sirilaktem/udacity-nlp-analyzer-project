@@ -11,6 +11,11 @@
     text-align: center;
 }
 
+#errorMsg {
+    font: var(--font-regular) var(--text-sm) var(--font-family);
+    color: crimson;
+}
+
 input {
     width: 100%;
 }

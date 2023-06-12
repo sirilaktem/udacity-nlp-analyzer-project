@@ -3,17 +3,29 @@ const handleSubmit = (event) => {
 
     const resultHolder = document.getElementById('results');
     const txtField = document.getElementById('name');
+    const errorHolder = document.getElementById('errorMsg');
     resultHolder.innerHTML = '';
+    errorHolder.innerHTML = '';
 
     // check what text was put into the form field
     let formText = txtField.value.trim();
-    let textType = checkValidUrl(formText) ? 'URL' : 'TEXT';
+    let textType = Client.checkValidUrl(formText) ? 'URL' : 'TEXT';
 
-    if (checkEmptyInput(formText)) {
-        postData('/nlp', { term: formText, type: textType }).then((result) => {
-            resultHolder.innerHTML = formatResult(result, formText, textType);
+    if (Client.checkEmptyInput(formText)) {
+        Client.postData('/nlp', {
+            term: formText,
+            type: textType,
+        }).then((result) => {
+            resultHolder.innerHTML = Client.formatResult(
+                result,
+                formText,
+                textType
+            );
             txtField.value = '';
+            errorHolder.innerHTML = '';
         });
+    } else {
+        errorHolder.innerHTML = 'Please enter text or URL in the form below.';
     }
 };
 
@@ -36,45 +48,46 @@ const postData = async (url = '', data = {}) => {
 };
 
 const formatResult = (data, inputVal, inputType) => {
-    result =
+    let output =
         '<strong class="result-head">Text/URL: </strong><span>' +
         inputVal +
         '</span><br>';
-    result +=
+    output +=
         '<strong class="result-head">Type: </strong><span>' +
         inputType +
         '</span><br>';
     if (data.status.code === '0') {
-        result +=
+        output +=
             '<strong class="result-head">Polarity: </strong><span>' +
-            translatePolarity(data.score_tag) +
+            Client.translatePolarity(data.score_tag) +
             '</span><br>';
-        result +=
+        output +=
             '<strong class="result-head">Subjectivity: </strong><span>' +
             data.subjectivity +
             '</span><br>';
-        result +=
+        output +=
             '<strong class="result-head">Agreement: </strong><span>' +
             data.agreement +
             '</span><br>';
-        result +=
+        output +=
             '<strong class="result-head">Confidence: </strong><span>' +
             data.confidence +
             '</span class="result-head"></br>';
-        result +=
+        output +=
             '<strong class="result-head">Irony: </strong><span>' +
             data.irony +
             '</span></br>';
     } else {
-        result +=
+        output +=
             '<strong class="result-head">Error: </strong><span>' +
             data.status.msg +
             '</span></br>';
     }
-    return result;
+    return output;
 };
 
 const translatePolarity = (score) => {
+    let polarity = 'N/A';
     switch (score) {
         case 'P+':
             polarity = 'STRONG POSITIVE';
@@ -94,8 +107,6 @@ const translatePolarity = (score) => {
         case 'NONE':
             polarity = 'WITHOUT POLARITY';
             break;
-        default:
-            polarity = 'N/A';
     }
     return polarity;
 };

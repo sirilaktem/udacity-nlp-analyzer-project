@@ -8,18 +8,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/responsive.css">
-        <script type="text/javascript" src="../../../dist/main.js"></script>
-        <script type="text/javascript" src="/js/inputChecker.js"></script>
-        <script type="text/javascript" src="/js/formHandler.js"></script>
     </head>
 
     <body>
 
         <header>
             <div class="container">
-                <a class="brand" href="index.html"><img id="logo" src="images/logo.svg" alt="Untitled UI logo"></a>
+                <a class="brand" href="index.html"><img id="logo" alt="Untitled UI logo"></a>
             </div>
         </header>
 
@@ -27,9 +22,10 @@
             <section class="container">
                 <div class="app-title pt-2">Evaluate Text/URL with Natural Language Processing (NLP)</div>
                 <p class="pt-2">Welcome to Sentiment Analysis app, powered by the MeaningCloud API. This powerful tool allows you to analyze sentiments expressed in text data, helping you gain valuable insights. Please provide your text or URL on the form below to analyze.</p>
-                <form onsubmit="return handleSubmit(event)">
+                <form onsubmit="return Client.handleSubmit(event)">
+                    <div id="errorMsg"></div>
                     <input id="name" type="text" name="input" value="" placeholder="Please enter text or URL" required>
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)" class="btn">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)" class="btn">
                 </form>
             </section>
 
@@ -44,6 +40,14 @@
         <footer>
             Powered By: MeaningCloud Sentiment Analysis API version 2.1
         </footer>
-
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>
